@@ -12,6 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM fedora
+# FROM fedora # -> 267MB
+# FROM scratch # -> 106 MB
+# FROM scratch # with build flags -> 72 MB
+# FROM alpine:3.21 # -> 114 MB
+# FROM ubuntu:22.04 # -> 184MB
+FROM scratch
 ADD kube-sample-apiserver /
 ENTRYPOINT ["/kube-sample-apiserver"]
